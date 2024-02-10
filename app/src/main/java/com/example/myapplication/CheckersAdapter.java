@@ -16,7 +16,7 @@ public class CheckersAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 64; // 8x8
+        return 64;
     }
 
     @Override
@@ -36,6 +36,7 @@ public class CheckersAdapter extends BaseAdapter {
         if (convertView == null) {
             imageView = new ImageView(context);
             int size = getSquareSize(parent);
+
             GridView.LayoutParams params = new GridView.LayoutParams(size, size);
             imageView.setLayoutParams(params);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
