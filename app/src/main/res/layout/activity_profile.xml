@@ -5,7 +5,7 @@
     android:id="@+id/Linear1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green1"
+    android:background="@color/blue"
     android:orientation="vertical"
 >
 
@@ -15,7 +15,7 @@
        android:layout_weight="4">
 
       <com.google.android.material.imageview.ShapeableImageView
-          android:id="@+id/profile_picture"
+          android:id="@+id/picture_of_profil"
           android:layout_width="100dp"
           android:layout_height="100dp"
           android:layout_marginStart="16dp"
@@ -26,14 +26,14 @@
           app:layout_constraintTop_toTopOf="parent" />
 
       <TextView
-          android:id="@+id/username"
+          android:id="@+id/user_name"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="12dp"
           android:layout_marginTop="32dp"
           android:text="User_Name"
           android:textSize="20dp"
-          app:layout_constraintStart_toEndOf="@+id/profile_picture"
+          app:layout_constraintStart_toEndOf="@+id/picture_of_profil"
           app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -45,9 +45,12 @@
           android:layout_marginEnd="28dp"
           android:src="@drawable/baseline_settings_24"
           android:background="?attr/selectableItemBackground"
-          android:onClick="onImageButtonClick"
+          android:onClick="ButtonClick"
+          android:paddingEnd="10dp"
+          android:paddingRight="5dp"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
+          app:layout_constraintTop_toTopOf="parent"
+          android:contentDescription="Button to open settings"/>
 
    </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -61,26 +64,40 @@
 
 
       <com.google.android.material.tabs.TabLayout
+          android:id="@+id/tab"
+          app:tabGravity="fill"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:id="@+id/tab_layout"
-          app:tabGravity="fill"
           app:tabMode="fixed"
           android:background="#FFFFFFFF"
-          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent">
+          app:layout_constraintEnd_toEndOf="parent">
 
+         <com.google.android.material.tabs.TabItem
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Friends" />
 
+         <com.google.android.material.tabs.TabItem
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Game Activ" />
 
       </com.google.android.material.tabs.TabLayout>
 
-      <androidx.viewpager2.widget.ViewPager2
-          android:id="@+id/view_pager"
+
+      <EditText
+          android:id="@+id/search_edit_text"
           android:layout_width="match_parent"
-          android:layout_height="match_parent"/>
+          android:layout_height="wrap_content"
+          android:hint="Search"
+          android:imeOptions="actionSearch"
+          app:layout_constraintBottom_toBottomOf="parent"
 
-
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/tab"
+          app:layout_constraintVertical_bias="0.056" />
 
 
    </androidx.constraintlayout.widget.ConstraintLayout>

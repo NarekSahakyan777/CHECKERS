@@ -28,7 +28,17 @@ public class MainActivity extends AppCompatActivity {
         gridView.setAdapter(new CheckersAdapter(this));
         gridView.setNumColumns(8);
         linearLayout.addView(gridView);
+        Button button = new Button(this);
+        button.setText("Click");
+        linearLayout.addView(button);
         setContentView(linearLayout);
+       button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getApplicationContext(), Profile.class);
+                startActivity(in);
 
+            }
+        });
     }
 }
